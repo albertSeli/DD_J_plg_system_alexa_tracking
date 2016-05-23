@@ -16,7 +16,6 @@ jimport('joomla.access.access');
  */
 class plgSystemDD_Alexa_Tracking extends JPlugin
 {
-	
 	public function onBeforeCompileHead()
 	{
 		$app = JFactory::getApplication();
@@ -25,7 +24,8 @@ class plgSystemDD_Alexa_Tracking extends JPlugin
 		if ($app instanceof JApplicationSite)
 		{
 			$doc = JFactory::getDocument();
-			// Setup Alexa meta tag like: name="alexaVerifyID" content="0iv4uIxtox03ZhrAfoUBuOlwxqc"
+
+			// Setup Alexa meta tag
 			$doc->setMetaData("alexaVerifyID",$this->params->get('alexaverifyid'));
 		}
 	}
@@ -43,12 +43,12 @@ class plgSystemDD_Alexa_Tracking extends JPlugin
 			
 			// Alexa Tracking snipped
 			$alexaskript = "<!-- Alexa Script -->
-<script type=\"text/javascript\">
-	_atrk_opts = { atrk_acct:\"$certifycode\", domain:\"$trackingurl\",dynamic: true};
-	(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = \"https://d31qbv1cthcecs.cloudfront.net/atrk.js\"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
-</script>
-<noscript><img src=\"https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=$certifycode\" style=\"display:none\" height=\"1\" width=\"1\" alt=\"\" /></noscript>
-<!-- END Alexa Script -->";
+							<script type=\"text/javascript\">
+								_atrk_opts = { atrk_acct:\"$certifycode\", domain:\"$trackingurl\",dynamic: true};
+								(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = \"https://d31qbv1cthcecs.cloudfront.net/atrk.js\"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+							</script>
+							<noscript><img src=\"https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=$certifycode\" style=\"display:none\" height=\"1\" width=\"1\" alt=\"\" /></noscript>
+							<!-- END Alexa Script -->";
 			
 			// Add Alexa Tracking snipped just bevore closing body tag;
 			$html = str_replace('</body>', $alexaskript . '</body>', $app->getBody());
