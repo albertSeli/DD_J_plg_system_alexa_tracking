@@ -42,7 +42,7 @@ class plgSystemDD_Alexa_Tracking extends JPlugin
 			$trackingurl = $this->params->get('trackingurl');
 
 			// Alexa Tracking snipped
-			$alexaskript = "<!-- Alexa Script -->
+			$alexascript = "<!-- Alexa Script -->
 <script type=\"text/javascript\">
 	_atrk_opts = { atrk_acct:\"$certifycode\", domain:\"$trackingurl\",dynamic: true};
 	(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = \"https://d31qbv1cthcecs.cloudfront.net/atrk.js\"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
@@ -51,7 +51,7 @@ class plgSystemDD_Alexa_Tracking extends JPlugin
 <!-- END Alexa Script -->";
 
 			// Add Alexa Tracking snipped just bevore closing body tag;
-			$html = str_replace('</body>', $alexaskript . PHP_EOL . '</body>', $app->getBody());
+			$html = str_replace('</body>', $alexascript . PHP_EOL . '</body>', $app->getBody());
 
 			$app->setBody($html);
 		}
