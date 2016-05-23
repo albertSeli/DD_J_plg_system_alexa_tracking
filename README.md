@@ -2,8 +2,8 @@
 is a Joomla! system plugin to add the Alexa - Analytics Tracking Code to your website.
 
 -
-Alexa.com provides website analytics, this Plugin implement that service, by adding
-a JavaScript Tracking snipped and an special Meta Information to your website.
+Alexa.com provides website analytics, this Plugin implement that services                  <br>
+by adding a JavaScript Tracking snipped and an special Meta Information to your website.
 
 Tracking URL, Verfiy ID and Alexa Certify Code, must be specified at plugin settings.
 

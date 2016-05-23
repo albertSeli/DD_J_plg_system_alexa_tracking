@@ -22,7 +22,7 @@
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="trackingurl" type="text" label="PLG_SYSTEM_DD_ALEXA_TRACKING_TRACKINGURL_LBL" description="PLG_SYSTEM_DD_ALEXA_TRACKING_TRACKINGURL_DESC" filter="raw" />
+                <field name="trackingurl" type="text" default="yoururl.org" label="PLG_SYSTEM_DD_ALEXA_TRACKING_TRACKINGURL_LBL" description="PLG_SYSTEM_DD_ALEXA_TRACKING_TRACKINGURL_DESC" filter="raw" />
                 <field name="alexaverifyid" type="text" default="0iv4uIxtox03ZhrAfoUBuOlwxqc" label="PLG_SYSTEM_DD_ALEXA_TRACKING_ALEXAVERIFYID_LBL" description="PLG_SYSTEM_DD_ALEXA_TRACKING_ALEXAVERIFYID_DESC" filter="raw" />
                 <field name="certifycode" type="text" default="FBMgh1a0k700EN" label="PLG_SYSTEM_DD_ALEXA_TRACKING_CERTIFYCODE_LBL" description="PLG_SYSTEM_DD_ALEXA_TRACKING_CERTIFYCODE_DESC" filter="raw" />
             </fieldset>
