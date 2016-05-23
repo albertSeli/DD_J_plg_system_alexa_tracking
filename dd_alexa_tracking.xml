@@ -14,7 +14,7 @@
         <filename>index.html</filename>
     </files>
     <languages>
-        <language tag="en-GB">language/en-GB/en-GB.plg_system_dd_dd_alexa_tracking.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_system_dd_alexa_tracking.sys.ini</language>
     </languages>
     <updateservers>
         <server type="collection" priority="1" name="HR IT-Solutions Updates">http://www.hr-it-solutions.com/jextensions/update.xml</server>
