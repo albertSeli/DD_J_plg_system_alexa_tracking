@@ -14,7 +14,7 @@ jimport('joomla.access.access');
 /**
  * Joomla! system plugin to add the Alexa - Analytics Tracking Code to your website.
  */
-class plgSystemdd_alexa_tracking extends JPlugin
+class plgSystemDD_Alexa_Tracking extends JPlugin
 {
 	
 	public function onBeforeCompileHead()
@@ -25,7 +25,7 @@ class plgSystemdd_alexa_tracking extends JPlugin
 		if ($app instanceof JApplicationSite)
 		{
 			$doc = JFactory::getDocument();
-			// Setup meta like: name="alexaVerifyID" content="0iv4uIxtox03ZhrAfoUBuOlwxqc"
+			// Setup Alexa meta tag like: name="alexaVerifyID" content="0iv4uIxtox03ZhrAfoUBuOlwxqc"
 			$doc->setMetaData("alexaVerifyID",$this->params->get('alexaverifyid'));
 		}
 	}
