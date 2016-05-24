@@ -1,5 +1,5 @@
 # DD_J_plg_system_alexa-tracking
-is a Joomla! system plugin to add the Alexa - Analytics tracking code to your website.
+is a Joomla! system plugin to add the Alexa - Analytics Tracking code to your website.
 
 -
 Alexa.com provides website analytics, this plugin implement that services                  <br>
