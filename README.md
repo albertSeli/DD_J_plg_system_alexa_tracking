@@ -3,7 +3,6 @@ is a Joomla! system plugin to add the Alexa - Analytics Tracking code to your we
 
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=102)](https://opensource.org/licenses/GPL-2.0/)  
 
--
 Alexa.com provides website analytics, this plugin implement that services                  <br>
 by adding a JavaScript Tracking snipped and a special meta information to your website.
 
