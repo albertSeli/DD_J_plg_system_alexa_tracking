@@ -1,7 +1,7 @@
 # DD_J_plg_system_alexa-tracking
 is a Joomla! system plugin to add the Alexa - Analytics Tracking code to your website.
 
-[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=102)](https://github.com/ellerbrock/open-source-badge/) [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=102)](https://opensource.org/licenses/GPL-2.0/)  
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=102)](https://opensource.org/licenses/GPL-2.0/)  
 
 -
 Alexa.com provides website analytics, this plugin implement that services                  <br>
