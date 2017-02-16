@@ -16,44 +16,42 @@ jimport('joomla.access.access');
  */
 class plgSystemDD_Alexa_Tracking extends JPlugin
 {
+	protected $app;
+
 	public function onBeforeCompileHead()
 	{
-		$app = JFactory::getApplication();
-
 		// Front end
-		if ($app instanceof JApplicationSite)
+		if ($this->app->isSite())
 		{
 			$doc = JFactory::getDocument();
 
 			// Setup Alexa meta tag
-			$doc->setMetaData("alexaVerifyID",$this->params->get('alexaverifyid'));
+			$doc->setMetaData("alexaVerifyID", $this->params->get('alexaverifyid'));
 		}
 	}
 
 	public function onAfterRender()
 	{
-		$app = JFactory::getApplication();
-
 		// Front end
-		if ($app instanceof JApplicationSite)
+		if ($this->app->isSite())
 		{
 			// Plugin parameter
 			$certifycode = $this->params->get('certifycode');
 			$trackingurl = $this->params->get('trackingurl');
 
 			// Alexa Tracking snipped
-			$alexascript = "<!-- Alexa Script -->
-<script type=\"text/javascript\">
-	_atrk_opts = { atrk_acct:\"$certifycode\", domain:\"$trackingurl\",dynamic: true};
-	(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = \"https://d31qbv1cthcecs.cloudfront.net/atrk.js\"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+			$alexascript = '<!-- Alexa Script -->
+<script type="text/javascript">
+	_atrk_opts = { atrk_acct:"' . htmlentities($certifycode, ENT_QUOTES, 'UTF-8') . '", domain:"' . htmlentities($trackingurl, ENT_QUOTES, 'UTF-8') . '",dynamic: true};
+	(function() { var as = document.createElement("script"); as.type = "text/javascript"; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(as, s); })();
 </script>
-<noscript><img src=\"https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=$certifycode\" style=\"display:none\" height=\"1\" width=\"1\" alt=\"\" /></noscript>
-<!-- END Alexa Script -->";
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=' . htmlentities($certifycode, ENT_QUOTES, 'UTF-8') . '" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- END Alexa Script -->';
 
 			// Add Alexa Tracking snipped just bevore closing body tag;
-			$html = str_replace('</body>', $alexascript . PHP_EOL . '</body>', $app->getBody());
+			$html = str_replace('</body>', $alexascript . PHP_EOL . '</body>', $this->app->getBody());
 
-			$app->setBody($html);
+			$this->app->setBody($html);
 		}
 	}
 }
